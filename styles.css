@@ -1,0 +1,564 @@
+/* ===== Base Styles ===== */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  background-color: #000;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+.hidden {
+  display: none !important;
+}
+
+/* ===== Navigation ===== */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 101;
+  background-color: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(5px);
+  padding: 0.75rem 0;
+}
+
+.nav-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.site-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  background: linear-gradient(to right, #a78bfa, #ec4899);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.nav-links {
+  display: none;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  margin-left: 1.5rem;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #d1d5db;
+}
+
+.menu-toggle {
+  position: relative;
+  left: -10%;
+  display: block;
+  color: white;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.mobile-menu {
+  position: fixed;
+  top: 60px; /* Height of your nav bar */
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.9);
+  width: 100%;
+  padding: 1rem 0;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  opacity: 0;
+  transform: translateY(-10px);
+  z-index: 100; /* Higher than other elements */
+}
+.mobile-menu-container {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+.mobile-menu:not(.hidden) {
+  opacity: 1;
+  transform: translateY(0);
+}
+.mobile-menu a {
+  display: block;
+  color: white;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  transition: color 0.3s ease;
+}
+
+.mobile-menu a:hover {
+  color: #d1d5db;
+}
+
+/* ===== Section Styles ===== */
+.section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  padding: 5rem 1rem;
+}
+
+.section-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.section-image {
+  position: relative;
+  margin-bottom: 2.5rem;
+}
+
+.section-image img {
+  width: 100%;
+  max-width: 28rem;
+  margin: 0 auto;
+  border-radius: 0.5rem;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  transition: transform 0.5s ease;
+  border: 2px solid;
+}
+
+.section-image:hover img {
+  transform: scale(1.05);
+}
+
+.section-image-overlay {
+  position: absolute;
+  inset: 0;
+  border-radius: 0.5rem;
+}
+
+.section-title {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+.section-desc {
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.tag-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.tag {
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+}
+
+.scroll-indicator {
+  position: absolute;
+  bottom: 2.5rem;
+  left: 0;
+  right: 0;
+  text-align: center;
+  animation: bounce 2s infinite;
+}
+/* ===== Section Layout Alternation ===== */
+/* Default layout (image left, content right) */
+.section-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.section-text {
+  width: 100%;
+}
+
+/* Even sections (image right, content left) */
+section:nth-child(even) .section-content {
+  flex-direction: column-reverse;
+}
+
+/* ===== Character-Specific Background Colors ===== */
+
+/* Dream (third section - image left) */
+#dream {
+  background: linear-gradient(to bottom, #1e3a8a, #3730a3);
+}
+/* Particle Canvas Styles */
+#dream-particles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 10;
+}
+
+/* Make sure content stays above particles */
+#dream .section-container {
+  position: relative;
+  z-index: 2;
+}
+
+/* Dream-specific particle styles */
+#dream {
+  position: relative;
+  overflow: hidden;
+}
+
+@keyframes twinkle {
+  0% { opacity: 0.3; }
+  50% { opacity: 1; }
+  100% { opacity: 0.3; }
+}
+
+/* Apply to random particles */
+.particle-1 { animation: twinkle 3s infinite; }
+.particle-2 { animation: twinkle 4s infinite 1s; }
+/* Add more variations */
+
+/* Destruction (fourth section - image right) */
+#destruction {
+  background: linear-gradient(to bottom, #7f1d1d, #9a3412);
+}
+
+/* Desire (fifth section - image left) */
+#desire {
+  background: linear-gradient(to bottom, #581c87, #9d174d);
+}
+
+/* Despair (sixth section - image right) */
+#despair {
+  background: linear-gradient(to bottom, #1f2937, #111827);
+}
+
+/* Delirium (seventh section - image left) */
+#delirium {
+  background: linear-gradient(135deg, #6e45e2 0%, #88d3ce 100%);
+}
+#delirium {
+  animation: deliriumColors 20s infinite;
+  background: linear-gradient(135deg, #6e45e2 0%, #88d3ce 100%);
+}
+
+@keyframes deliriumColors {
+  0% { background: #ff00ff; filter: hue-rotate(0deg); }
+  20% { background: #00ffff; }
+  40% { background: #ffff00; }
+  60% { background: #ff00ff; }
+  80% { background: #00ff00; }
+  100% { background: #ff00ff; filter: hue-rotate(360deg); }
+}
+
+.delirium-floater {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background-size: contain;
+  opacity: 0.7;
+  animation: float 15s infinite linear;
+}
+
+/* Add floating elements dynamically via JS */
+
+/* ===== Individual Section Themes ===== */
+/* Destiny */
+#destiny {
+  background: linear-gradient(to bottom, #111827, #1f2937);
+}
+
+#destiny .section-image img {
+  border-color: #4b5563;
+}
+
+#destiny .section-image-overlay {
+  background-color: #111827;
+  opacity: 0.2;
+}
+
+#destiny .section-title {
+  color: #9ca3af;
+}
+
+#destiny .section-desc {
+  color: #9ca3af;
+}
+
+#destiny .tag {
+  background-color: #1f2937;
+  color: #d1d5db;
+}
+
+/* Death */
+#death {
+  background: linear-gradient(to bottom, #000, #111827);
+}
+
+#death .section-image img {
+  border-radius: 9999px;
+  border-width: 4px;
+  border-color: #ec4899;
+}
+
+#death .section-image-overlay {
+  background-color: #831843;
+  opacity: 0.1;
+  border-radius: 9999px;
+}
+
+#death .section-title {
+  color: #ec4899;
+  text-align: right;
+}
+
+#death .section-desc {
+  color: #e5e7eb;
+  text-align: right;
+}
+
+#death .tag-container {
+  justify-content: flex-end;
+}
+
+#death .tag {
+  background-color: rgba(236, 72, 153, 0.5);
+  color: #fbcfe8;
+}
+
+#death-particles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+  mix-blend-mode: screen;
+}
+
+#death .section-container {
+  position: relative;
+  z-index: 2;
+}
+
+/* Ankh-shaped particles */
+@keyframes float-up {
+  0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { transform: translateY(-20vh) rotate(360deg); opacity: 0; }
+}
+
+/* ===== Comic Book Panels ===== */
+.comic-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem 0;
+  display: block;
+}
+
+.comic-panel {
+  position: relative;
+  width: 100%;
+  height: 250px;
+  border: 4px solid #000;
+  background: #111;
+  box-shadow: 
+    8px 8px 0 rgba(0, 0, 0, 0.3),
+    inset 0 0 0 2px #fff;
+  overflow: hidden;
+  transform: rotate(-1deg);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Character-specific panel borders */
+#destiny .comic-panel { border-color: #4b5563; }
+#death .comic-panel { border-color: #ec4899; }
+#dream .comic-panel { border-color: #60a5fa; }
+#destruction .comic-panel { border-color: #f97316; }
+#desire .comic-panel { border-color: #d946ef; }
+#despair .comic-panel { border-color: #6b7280; }
+#delirium .comic-panel { 
+  border-image: linear-gradient(45deg, #ff00ff, #00ffff) 1;
+  animation: borderPulse 4s infinite alternate;
+}
+
+.comic-panel img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: transform 0.6s ease;
+  filter: grayscale(30%) contrast(110%);
+}
+
+.comic-panel:hover {
+  transform: rotate(0deg) translateY(-5px);
+  box-shadow: 
+    12px 12px 0 rgba(0, 0, 0, 0.2),
+    inset 0 0 0 2px #fff;
+  z-index: 10;
+}
+
+.comic-panel:hover img {
+  transform: scale(1.08);
+  filter: grayscale(0%) contrast(120%);
+}
+
+.comic-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+  padding: 1rem;
+  font-family: 'Bangers', cursive;
+  color: white;
+  text-shadow: 2px 2px 0 #000;
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+}
+
+.comic-panel:hover .comic-caption {
+  transform: translateY(0);
+}
+
+/* Special effects for Delirium's panels */
+#delirium .comic-panel {
+  animation: deliriumPanel 8s infinite linear;
+}
+
+#delirium .comic-panel img {
+  filter: hue-rotate(0deg) saturate(150%);
+  animation: deliriumImage 12s infinite linear;
+}
+
+@keyframes borderPulse {
+  0% { border-image-source: linear-gradient(45deg, #ff00ff, #00ffff); }
+  50% { border-image-source: linear-gradient(45deg, #00ffff, #ffff00); }
+  100% { border-image-source: linear-gradient(45deg, #ffff00, #ff00ff); }
+}
+
+@keyframes deliriumPanel {
+  0% { transform: rotate(-2deg) scale(1); }
+  50% { transform: rotate(2deg) scale(1.02); }
+  100% { transform: rotate(-2deg) scale(1); }
+}
+
+@keyframes deliriumImage {
+  0% { filter: hue-rotate(0deg) saturate(150%); }
+  100% { filter: hue-rotate(360deg) saturate(150%); }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .comic-gallery {
+    grid-template-columns: 1fr;
+  }
+  
+  .comic-panel {
+    height: 150px;
+    margin: 0 auto;
+    max-width: 300px;
+  }
+  
+  #delirium .comic-panel {
+    animation: none;
+  }
+}
+
+/* ===== Animations ===== */
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-20px);
+  }
+  60% {
+    transform: translateY(-10px);
+  }
+}
+
+/* ===== Responsive Design ===== */
+@media (min-width: 768px) {
+  .nav-links {
+    display: flex;
+  }
+  
+  .menu-toggle {
+    display: none;
+  }
+
+   .section-content {
+    flex-direction: row; 
+  }
+  
+  section:nth-child(even) .section-content {
+    flex-direction: row-reverse;
+  }
+  
+  .section-text {
+    width: 50%;
+    padding-left: 3rem;
+  }
+
+section:nth-child(even) .section-text {
+  padding-right: 3rem;
+  padding-left: 0;
+}
+  
+  #death .section-content {
+    flex-direction: row-reverse;
+  }
+  
+  #death .section-text {
+    padding-left: 0;
+    padding-right: 3rem;
+    text-align: right;
+  }
+}
+
+/* ===== Barba.js Transitions ===== */
+.barba-leave {
+  opacity: 1;
+}
+
+.barba-leave-active {
+  transition: opacity 0.5s ease;
+}
+
+.barba-leave-to {
+  opacity: 0;
+}
+
+.barba-enter {
+  opacity: 0;
+}
+
+.barba-enter-active {
+  transition: opacity 0.5s ease;
+}
+
+.barba-enter-to {
+  opacity: 1;
+}

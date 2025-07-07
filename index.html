@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Endless</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="https://unpkg.com/@barba/core"></script>
+</head>
+<body>
+    <!-- Main Navigation -->
+    <nav>
+        <div class="nav-container">
+            <h1 class="site-title">THE ENDLESS</h1>
+            <div class="nav-links">
+                <a href="#destiny">Destiny</a>
+                <a href="#death">Death</a>
+                <a href="#dream">Dream</a>
+                <a href="#destruction">Destruction</a>
+                <a href="#desire">Desire</a>
+                <a href="#despair">Despair</a>
+                <a href="#delirium">Delirium</a>
+            </div>
+            <button class="menu-toggle" id="menu-toggle">
+                <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </div>
+<!-- Mobile Menu -->
+<div class="mobile-menu hidden" id="mobile-menu">
+  <div class="mobile-menu-container">
+    <a href="#destiny">Destiny</a>
+    <a href="#death">Death</a>
+    <a href="#dream">Dream</a>
+    <a href="#destruction">Destruction</a>
+    <a href="#desire">Desire</a>
+    <a href="#despair">Despair</a>
+    <a href="#delirium">Delirium</a>
+  </div>
+</div>
+</div>
+    </nav>
+
+    <!-- Main Content -->
+    <main data-barba="container" data-barba-namespace="home">
+        <!-- Destiny Section -->
+        <section id="destiny" class="section">
+            <div class="section-container">
+                <div class="section-content">
+                    <div class="section-image">
+                        <img src="images/Destiny.jpg" alt="Destiny">
+                        <div class="section-image-overlay"></div>
+                    </div>
+                    <div class="section-text">
+                        <h2 class="section-title destiny-title">Destiny</h2>
+                        <p class="section-desc destiny-desc">The eldest, blind, and always carrying a massive book containing all events past, present, and future.</p>
+                        <div class="tag-container">
+                            <span class="tag">Eldest</span>
+                            <span class="tag">Omniscient</span>
+                            <span class="tag">Inevitable</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="scroll-indicator">
+                <svg width="32" height="32" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                </svg>
+            </div>
+            <div class="comic-gallery">
+    <div class="comic-panel">
+      <img src="https://i.pinimg.com/736x/7f/2d/9a/7f2d9aa55a26af74f4f338fb21ef2a10.jpg" alt="Destiny's Book">
+      <div class="comic-caption">"The Book of Destiny cannot be changed"</div>
+    </div>
+    <div class="comic-panel">
+      <img src="https://i.pinimg.com/736x/94/c8/7c/94c87cf2a6847a457394d41ea4e5179a.jpg" alt="Destiny's Garden">
+      <div class="comic-caption">The Garden of Forking Ways</div>
+    </div>
+  </div>
+        </section>
+
+        <!-- Death Section -->
+        <section id="death" class="section">
+            <div id="death-particles"></div> <!-- Particle container -->    
+            <div class="section-container">
+                <div class="section-content">
+                    <div class="section-image">
+                        <img src="images/Death.png" alt="Death" style="border-radius: 9999px; border-width: 4px;">
+                        <div class="section-image-overlay" style="border-radius: 9999px;"></div>
+                    </div>
+                    <div class="section-text">
+                        <h2 class="section-title death-title">Death</h2>
+                        <p class="section-desc death-desc">The most popular, a cheerful, kind, and goth-punk incarnation of mortality.</p>
+                        <div class="tag-container">
+                            <span class="tag">Kind</span>
+                            <span class="tag">Goth</span>
+                            <span class="tag">Essential</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="comic-gallery">
+    <div class="comic-panel">
+      <img src="https://i.pinimg.com/736x/f2/ac/5a/f2ac5aa0761b291a7ef57aa4f5698a5e.jpg" alt="Death">
+      <div class="comic-caption">"THE KINDEST END"
+"You get a lifetime"</div>
+    </div>
+    <div class="comic-panel">
+      <img src="https://i.pinimg.com/736x/c9/02/5b/c9025b5b7c22dd09a7ebb9b6802d36aa.jpg" alt="Death">
+      <div class="comic-caption">"GOTHIC REAPER"
+"I'm not scary, really"</div>
+    </div>
+  </div>
+        </section>
+
+        <!-- Dream Section -->
+        <section id="dream" class="section">
+            <div id="dream-particles"></div> <!-- Particle container -->
+            <div class="section-container">
+                <div class="section-content">
+                    <div class="section-image">
+                        <img src="images/Dream.jpg" alt="Dream">
+                        <div class="section-image-overlay"></div>
+                    </div>
+                    <div class="section-text">
+                        <h2 class="section-title dream-title">Dream</h2>
+                        <p class="section-desc dream-desc">The protagonist of The Sandman, lord of stories and imagination.</p>
+                        <div class="tag-container">
+                            <span class="tag">Morpheus</span>
+                            <span class="tag">Stories</span>
+                            <span class="tag">King of Dreams</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="comic-gallery">
+    <div class="comic-panel">
+      <img src="https://i.pinimg.com/736x/53/86/bc/5386bcb4bdd2df2c302d34a27b8d7244.jpg" alt="Dream">
+      <div class="comic-caption">"LORD OF STORIES"
+"The dreamers are my subjects"</div>
+    </div>
+    <div class="comic-panel">
+      <img src="https://i.pinimg.com/736x/21/09/8e/21098ef346b25ba824d8c594e37000e3.jpg" alt="Dream">
+      <div class="comic-caption">"THE SAND"
+"Dreamstuff in my hands"</div>
+    </div>
+  </div>
+        </section>
+
+        <!-- Destruction Section -->
+        <section id="destruction" class="section">
+            <div class="section-container">
+                <div class="section-content">
+                    <div class="section-image">
+                        <img src="images/Destruction.png" alt="Destruction">
+                        <div class="section-image-overlay"></div>
+                    </div>
+                    <div class="section-text">
+                        <h2 class="section-title destruction-title">Destruction</h2>
+                        <p class="section-desc destruction-desc">The absentee sibling who abandoned his role centuries ago, favoring creation over destruction.</p>
+                        <div class="tag-container">
+                            <span class="tag">Prodigal</span>
+                            <span class="tag">Artist</span>
+                            <span class="tag">Free</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="comic-gallery">
+    <div class="comic-panel">
+      <img src="https://i.pinimg.com/736x/75/1e/20/751e2022b1f7bba1ad8549d26383aae3.jpg" alt="Destruction">
+      <div class="comic-caption">"THE PRODIGAL"
+"I choose to create instead"</div>
+    </div>
+    <div class="comic-panel">
+      <img src="https://i.pinimg.com/736x/05/6f/a3/056fa3e6dbccf185b48f69e856c6ce62.jpg" alt="Destruction">
+      <div class="comic-caption">"ARTIST'S TOOLS"
+"Destruction is too easy"</div>
+    </div>
+  </div>
+        </section>
+
+        <!-- Desire Section -->
+        <section id="desire" class="section">
+            <div class="section-container">
+                <div class="section-content">
+                    <div class="section-image">
+                        <img src="images/Desire.jpg" alt="Desire">
+                        <div class="section-image-overlay"></div>
+                    </div>
+                    <div class="section-text">
+                        <h2 class="section-title desire-title">Desire</h2>
+                        <p class="section-desc desire-desc">Androgynous, manipulative, and embodies all forms of longing.</p>
+                        <div class="tag-container">
+                            <span class="tag">Golden</span>
+                            <span class="tag">Temptation</span>
+                            <span class="tag">Twins with Despair</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="comic-gallery">
+    <div class="comic-panel">
+      <img src="https://i.pinimg.com/736x/c0/81/10/c08110bb178ab6aee88b8875e7f85bfe.jpg" alt="Desire">
+      <div class="comic-caption">"GOLDEN TEMPTATION"
+"I am that which you crave"</div>
+    </div>
+    <div class="comic-panel">
+      <img src="https://i.pinimg.com/736x/54/6b/7f/546b7fb29c9d9c408de86f78702f3faf.jpg" alt="Desire">
+      <div class="comic-caption">"TWIN'S MIRROR"
+"Do you see yourself in me?"</div>
+    </div>
+  </div>
+        </section>
+
+        <!-- Despair Section -->
+        <section id="despair" class="section">
+            <div class="section-container">
+                <div class="section-content">
+                    <div class="section-image">
+                        <img src="images/Despair.jpg" alt="Despair">
+                        <div class="section-image-overlay"></div>
+                    </div>
+                    <div class="section-text">
+                        <h2 class="section-title despair-title">Despair</h2>
+                        <p class="section-desc despair-desc">Morbid, grotesque, and twin to Desire; represents hopelessness.</p>
+                        <div class="tag-container">
+                            <span class="tag">Hopeless</span>
+                            <span class="tag">Twin</span>
+                            <span class="tag">Grotesque</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="comic-gallery">
+    <div class="comic-panel">
+      <img src="https://i.pinimg.com/736x/0e/6f/ad/0e6fad094f31abb36080b1d1e38c9597.jpg" alt="Despair">
+      <div class="comic-caption">"HOOKS OF REGRET"
+"We are all my domain"</div>
+    </div>
+    <div class="comic-panel">
+      <img src="https://i.pinimg.com/736x/ef/4a/83/ef4a8324a423ed8097a395f22e2e5e4a.jpg" alt="Despair">
+      <div class="comic-caption">"THE GREY REALM"
+"Hope's absence defines me"</div>
+    </div>
+  </div>
+        </section>
+
+        <!-- Delirium Section -->
+        <section id="delirium" class="section">
+            <div class="section-container">
+                <div class="section-content">
+                    <div class="section-image">
+                        <img src="images/Delirium.jpg" alt="Delirium" style="border-width: 4px;">
+                        <div class="section-image-overlay"></div>
+                    </div>
+                    <div class="section-text">
+                        <h2 class="section-title delirium-title">Delirium</h2>
+                        <p class="section-desc delirium-desc">The youngest, formerly Delight, now chaotic and childlike, representing madness and change.</p>
+                        <div class="tag-container">
+                            <span class="tag">Chaotic</span>
+                            <span class="tag">Formerly Delight</span>
+                            <span class="tag">Youngest</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="comic-gallery">
+    <div class="comic-panel">
+      <img src="https://i.pinimg.com/736x/13/fe/48/13fe48cbcf38b357340e25c6f2cb2b49.jpg" alt="Delirium">
+      <div class="comic-caption">"FORMERLY DELIGHT"
+"I remember being happy"</div>
+    </div>
+    <div class="comic-panel">
+      <img src="https://i.pinimg.com/736x/4d/f2/c8/4df2c82ba76644bb42952051fa5766f7.jpg" alt="Delirium">
+      <div class="comic-caption">"COLORFUL CHAOS"
+"The fish are singing again"</div>
+    </div>
+  </div>
+        </section>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
